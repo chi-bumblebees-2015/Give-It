@@ -1,8 +1,9 @@
 <h2>Welcome cat lovers</h2>
 
 <% @items.each do |item|  %>
-<p><%= item %></p><br>
+<p><img src="<%= item.picture_url %>"><%= item.name %> <%= item.current_price %> <%= item.priority %> <%= item.qty_requested %> <%= item.qty_received %></p><br>
 
 <% end %>
 <br>
+
 
