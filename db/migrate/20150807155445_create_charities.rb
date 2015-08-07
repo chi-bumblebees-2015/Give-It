@@ -3,7 +3,7 @@ class CreateCharities < ActiveRecord::Migration
     create_table :charities do |t|
       t.string :name
       t.string :description
-      t.string :contact_person
+      t.string :contact_name
       t.string :contact_email
       t.string :password_hash
 

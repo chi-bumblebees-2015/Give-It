@@ -2,7 +2,7 @@ class CreateUsersCharities < ActiveRecord::Migration
   def change
     create_table :users_charities do |t|
       t.references :user
-      t.references :users_charity
+      t.references :charity
 
       t.timestamps null: false
     end

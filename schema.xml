@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="41" y="44" name="users">
+</datatypes><table x="26" y="133" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -49,7 +49,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="350" y="157" name="charities">
+<table x="359" y="251" name="charities">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -72,7 +72,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="669" y="20" name="categories">
+<table x="745" y="109" name="categories">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -83,7 +83,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="489" y="65" name="categorizations">
+<table x="523" y="181" name="categorizations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -99,7 +99,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="169" y="92" name="users_charities">
+<table x="169" y="181" name="users_charities">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -115,7 +115,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="497" y="213" name="wishlists">
+<table x="522" y="312" name="wishlists">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -133,7 +133,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="638" y="230" name="items">
+<table x="682" y="411" name="items">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -171,6 +171,38 @@
 <row name="picture_url" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="363" y="26" name="interests">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="category_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="categories" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="171" y="424" name="users_items">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="item_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="items" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
