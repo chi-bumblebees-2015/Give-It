@@ -38,9 +38,11 @@ end
 char.each do |ch|
   new_wishlist = Wishlist.create(name:"Our Wishlist")
   ch.wishlists << new_wishlist
+  ch.categories << cat.sample(2)
   10.times do
     it = Item.create(name:Faker::Commerce.product_name, current_price:(rand(50) + 1))
     it.users << users_array.sample
+    new_wishlist.items << it
   end
 end
 
