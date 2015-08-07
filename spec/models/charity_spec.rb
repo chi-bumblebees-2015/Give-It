@@ -26,6 +26,31 @@ RSpec.describe Charity, type: :model do
     expect(test_charity.password_hash).to eq("password")
   end
 
+  it 'can can have users' do
+    test_user = User.new(username:"tom")
+    test_charity.users << test_user
+    expect(test_charity.users).to include(test_user)
+  end
+
+  it 'can have categories' do
+    test_category = Category.new(name:"Economic Empowerment")
+    test_charity.categories << test_category
+    expect(test_charity.categories).to include(test_category)
+  end
+
+  it 'can have wishlists' do
+    test_wishlist = Wishlist.new(name:"My Wishlist")
+    test_charity.wishlists << test_wishlist
+    expect(test_charity.wishlists).to include(test_wishlist)
+  end
+
+  it 'can have items' do
+    test_wishlist = Wishlist.new(name:"My Wishlist")
+    test_item = Item.new(name:"Dog Food")
+    test_wishlist.items << test_item
+    test_charity.wishlists << test_wishlist
+    expect(test_charity.items).to include(test_item)
+  end
 
 
 end

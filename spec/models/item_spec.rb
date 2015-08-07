@@ -8,7 +8,17 @@ RSpec.describe Item, type: :model do
   end
 
   it 'can belong to a wishlist' do
-    :test_list.wishlist = User.new()
-
+    test_list = Wishlist.new(name:"test list")
+    test_item.wishlist = test_list
+    expect(test_item.wishlist).to equal(test_list)
   end
+
+  it 'can have a user' do
+    test_user = User.new(username:"Sam Wilson")
+    test_item.users << test_user
+    expect(test_item.users).to include(test_user)
+  end
+
+
+
 end
