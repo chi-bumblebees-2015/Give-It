@@ -1,9 +1,9 @@
 <h2>Welcome cat lovers</h2>
 
-<% @items.each do |item|  %>
-<p><img src="<%= item.picture_url %>"><%= item.name %> <%= item.current_price %> <%= item.priority %> <%= item.qty_requested %> <%= item.qty_received %></p><br>
+	<% @items.each do |item|  %>
+<p><img src="<%= item.picture_url %>"><a href="http://www.amazon.com/gp/registry/wishlist/3AW1BUYSY69G5"><%= item.name %></a>Price: <%= item.current_price %>    Priority: <%= item.priority %>    Requested Quantity: <%= item.qty_requested %>    Quanity Received: <%= item.qty_received %></p><br>
 
 <% end %>
 <br>
 
-
+<a href="http://www.amazon.com/gp/registry/wishlist/3AW1BUYSY69G5">Link to wishlist</a>

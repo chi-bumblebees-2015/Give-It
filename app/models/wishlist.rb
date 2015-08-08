@@ -13,9 +13,11 @@ class Wishlist < ActiveRecord::Base
 	
 		doc = Nokogiri::HTML(open(url)) 
 		p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-		# test = doc.css(" td a-text-left g-title")
-		# test = doc.css("h5").text
+		
+		File.open('heythere.xml', 'w') { |f| f.print(doc) }
 		test = doc.css("tr")
+
+
 		test1 = test[3..-1]
 		results = []
 		test1.each do |test|
@@ -33,39 +35,18 @@ class Wishlist < ActiveRecord::Base
 
 			results << item
 			
+	
 
 		end
 
-		# item title = test.css(".g-title").first.text
-		# link to image = test.css("img").first["src"]
-		# price = test.css(".price-section").first.text
-		# qty_requested = test.css(".g-requested").first.text
-		# qty_received = test.css(".g-received").first.text
-		# priority = test.css(".g-priority").first.text
-
-		  # t.references :wishlist
-      # t.string :name
-      # t.integer :creation_price
-      # t.integer :current_price
-      # t.string :priority
-      # t.integer :qty_requested
-      # t.integer :qty_received
-      # t.string :rating
-      # t.integer :number_ratings
-      # t.string :comments
-      # t.datetime :date_added
-      # t.string :picture_url
-      # t.string :link
-
-		# # <tr> <td class="a-text-center a-align-center g-image"> <img width="42" height="42" alt="" border="0" src="http://ecx.images-amazon.com/images/I/41eXhc8daqL._SL500_SS42_.jpg"> </td> <td class="a-text-left g-title"> <h5>Amazon Gift Card - Print</h5> <span> </span> <span> </span> </td> <td class="a-text-left g-comments a-hidden"> </td> <td class="a-text-left g-price price-section"> <span id="itemPrice_I38SRFWEYRL90T"> $50.00 </span> </td> <td class="a-text-left g-requested"> 1 </td> <td class="a-text-left g-received"> 0 </td> <td class="a-text-left g-priority a-hidden"> Medium </td> </tr>
-		p results
+	
+		# p results
 		results
 		# test = doc.css("tr img").text
 
 		# # rails_books = doc.css("title")
 		# # p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
 		# # p rails_books
-		# File.open('heythere.xml', 'w') { |f| f.print(doc.to_xml) }
 
 	end
 
